@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Cell Importados - Assistência Técnica de Celulares</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom Styles for theme and animations */
+        :root {
+            --primary-color: #2563eb; /* Blue from your brand */
+            --secondary-color: #facc15; /* Yellow from the star */
+            --dark-bg: #111827; /* Dark blue/black for tech feel */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            z-index: -1;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cta-button, .cta-button-secondary {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
+        }
+        .cta-button-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        .feature-card, .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover, .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Animated Background Container -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header class="bg-gray-900/50 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold flex items-center">
+                <!-- LOGO ATUALIZADA E AUMENTADA AQUI -->
+                <img src='https://i.postimg.cc/mg244tQm/S-2-removebg-preview.png' alt='Star Cell Logo' class="h-20">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#delivery" class="text-gray-300 hover:text-yellow-400 transition">Leva e Traz</a>
+                <a href="#services" class="text-gray-300 hover:text-yellow-400 transition">Serviços</a>
+                <a href="#why-us" class="text-gray-300 hover:text-yellow-400 transition">Diferenciais</a>
+                <a href="#contact" class="text-gray-300 hover:text-yellow-400 transition">Contato</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/80">
+            <a href="#delivery" class="block text-center py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Leva e Traz</a>
+            <a href="#services" class="block text-center py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Serviços</a>
+            <a href="#why-us" class="block text-center py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Diferenciais</a>
+            <a href="#contact" class="block text-center py-2 px-4 text-sm text-gray-200 hover:bg-gray-700">Contato</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center text-white text-center px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    Seu celular quebrou?
+                    <span class="text-yellow-400">A gente resolve.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Assistência Técnica Especializada em Apple, Samsung, Motorola, Xiaomi e mais!</p>
+                <a href="https://wa.me/5544984010720?text=Olá! Vi o site da Star Cell e gostaria de um orçamento." target="_blank" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-full inline-flex items-center text-lg">
+                    <i class="fab fa-whatsapp mr-3"></i>
+                    Pedir Orçamento Grátis
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Por que escolher a <span class="text-blue-600">Star Cell</span>?</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Oferecemos mais do que um simples reparo. Entregamos confiança e tranquilidade.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-dollar text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Preço Justo</h3>
+                        <p class="text-gray-600">Orçamentos transparentes e os melhores preços da região.</p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Agilidade</h3>
+                        <p class="text-gray-600">Reparos rápidos para você não ficar nem um minuto desconectado.</p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Qualidade</h3>
+                        <p class="text-gray-600">Peças de alta qualidade para garantir a durabilidade do conserto.</p>
+                    </div>
+                    <!-- Feature Card 4 -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-halved text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Garantia</h3>
+                        <p class="text-gray-600">Todos os nossos serviços e peças possuem garantia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Delivery Service Section -->
+        <section id="delivery" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 text-center">
+                    <i class="fas fa-motorcycle text-blue-600 text-8xl"></i>
+                </div>
+                <div class="md:w-2/3 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Comodidade Total: Buscamos e Levamos para Você!</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Sem tempo para vir até a loja? Não se preocupe. Oferecemos um serviço de leva e traz para coletar seu aparelho no conforto da sua casa ou trabalho e devolvê-lo consertado.
+                    </p>
+                    <a href="https://wa.me/5544984010720?text=Olá! Gostaria de agendar a coleta do meu aparelho." target="_blank" class="cta-button-secondary bg-blue-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center text-md hover:bg-blue-700">
+                        <i class="fas fa-calendar-check mr-3"></i>
+                        Agendar Coleta Agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nossos Principais Serviços</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-mobile-screen-button text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Troca de Tela</h3>
+                            <p class="text-gray-600">Trincou? Quebrou? Trocamos com agilidade.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-battery-full text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Troca de Bateria</h3>
+                            <p class="text-gray-600">Seu celular não segura mais carga? Nós resolvemos.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-charging-station text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Troca de Conector</h3>
+                            <p class="text-gray-600">Problemas para carregar? Fazemos a troca.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-key text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Desbloqueios</h3>
+                            <p class="text-gray-600">Realizamos desbloqueios de diversos modelos.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-microchip text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Reparo em Placa</h3>
+                            <p class="text-gray-600">Serviços avançados de reparo em placa-mãe.</p>
+                        </div>
+                    </div>
+                     <!-- Service Card -->
+                    <div class="service-card bg-white p-6 rounded-lg shadow-lg flex items-center">
+                        <i class="fas fa-headphones text-blue-600 text-4xl mr-5"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">Acessórios em Geral</h3>
+                            <p class="text-gray-600">Capas, películas, carregadores e muito mais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-gray-500 text-sm font-bold tracking-wider uppercase mb-8">Marcas que atendemos</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <i class="fab fa-apple text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                    <i class="fab fa-android text-5xl text-gray-400 hover:text-gray-600 transition"></i>
+                    <!-- Using text for brands for better compatibility -->
+                    <span class="text-4xl font-bold text-gray-400 hover:text-gray-600 transition">SAMSUNG</span>
+                    <span class="text-4xl font-bold text-gray-400 hover:text-gray-600 transition">MOTOROLA</span>
+                    <span class="text-4xl font-bold text-gray-400 hover:text-gray-600 transition">XIAOMI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Pronto para resolver seu problema?</h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">Clique no botão abaixo e fale diretamente com um de nossos técnicos. O orçamento é rápido e gratuito!</p>
+                <a href="https://wa.me/5544984010720?text=Olá! Preciso de um orçamento para conserto de celular." target="_blank" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-8 rounded-full inline-flex items-center text-lg">
+                    <i class="fab fa-whatsapp mr-3"></i>
+                    Falar com um especialista
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Star Cell Importados. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart text-red-500"></i> para um negócio local.</p>
+        </div>
+    </footer>
+
+    <!-- JS for Particles and Mobile Menu -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Particles.js Config
+        particlesJS('particles-js', {
+          "particles": {
+            "number": {
+              "value": 60,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#2563eb"
+            },
+            "shape": {
+              "type": "circle"
+            },
+            "opacity": {
+              "value": 0.4,
+              "random": true,
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 3,
+              "random": true
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#2563eb",
+              "opacity": 0.3,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 2,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "grab"
+              },
+              "onclick": {
+                "enable": false
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 140,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              }
+            }
+          },
+          "retina_detect": true
+        });
+    </script>
+</body>
+</html>
